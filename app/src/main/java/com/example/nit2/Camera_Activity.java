@@ -1,34 +1,17 @@
 package com.example.nit2;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.FileProvider;
 
-import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.io.File;
-
+import com.example.nit2.MainActivity;
+import com.example.nit2.R;
 
 public class Camera_Activity extends AppCompatActivity implements View.OnClickListener {
     private Button btnCamera;
@@ -70,7 +53,7 @@ public class Camera_Activity extends AppCompatActivity implements View.OnClickLi
             case R.id.cBtn:
                 // 카메라 기능을 Intent
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(i, 0);
+                startActivityForResult(i, REQUEST_IMAGE_CODE);
                 break;
         }
     }
